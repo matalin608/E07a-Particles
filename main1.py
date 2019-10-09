@@ -20,8 +20,8 @@ PARTICLE_MIN_X = -400
 PARTICLE_MAX_X = 400
 PARTICLE_VELOCITY_X = 0
 PARTICLE_VELOCITY_Y = -6
-PARTICLE_MIN_AX = -0.03
-PARTICLE_MAX_AX = 0.03
+PARTICLE_MIN_AX = 0
+PARTICLE_MAX_AX = 0
 PARTICLE_MIN_AY = -0.03
 PARTICLE_MAX_AY = 0.03
 PARTICLE_MIN_DECAY = 0.001
@@ -37,7 +37,7 @@ class Particle(arcade.Sprite):
         self.dy = dy
         self.ax = ax
         self.ay = ay
-        self.decay = decay
+        self.decay = 0
         self.color_pos = 0
 
         self.particle_colors = [
