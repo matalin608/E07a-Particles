@@ -15,17 +15,17 @@ MARGIN = 30
 SCREEN_TITLE = "Particle Exercise"
 
 PARTICLE_MIN_SCALE = 0.1
-PARTICLE_MAX_SCALE = 0.08
-PARTICLE_MIN_X = -40
-PARTICLE_MAX_X = 40
+PARTICLE_MAX_SCALE = .08
+PARTICLE_MIN_X = -400
+PARTICLE_MAX_X = 400
 PARTICLE_VELOCITY_X = 0
-PARTICLE_VELOCITY_Y = 4
+PARTICLE_VELOCITY_Y = -6
 PARTICLE_MIN_AX = -0.03
 PARTICLE_MAX_AX = 0.03
 PARTICLE_MIN_AY = -0.03
 PARTICLE_MAX_AY = 0.03
 PARTICLE_MIN_DECAY = 0.001
-PARTICLE_MAX_DECAY = 0.01
+PARTICLE_MAX_DECAY = 0.003
 
 
 class Particle(arcade.Sprite):
@@ -41,16 +41,16 @@ class Particle(arcade.Sprite):
         self.color_pos = 0
 
         self.particle_colors = [
-            (open_color.red_5, 4)
-            ,(open_color.orange_4, 5)
-            ,(open_color.red_3, 6)
-            ,(open_color.red_2, 7)
-            ,(open_color.red_1, 8)
-            ,(open_color.orange_1, 8)
-            ,(open_color.orange_2, 7)
-            ,(open_color.orange_3, 6)
-            ,(open_color.orange_4, 5)
-            ,(open_color.orange_5, 4)
+            (open_color.blue_5, 4)
+            ,(open_color.blue_4, 5)
+            ,(open_color.blue_3, 6)
+            ,(open_color.blue_2, 7)
+            ,(open_color.blue_1, 8)
+            ,(open_color.gray_1, 8)
+            ,(open_color.gray_2, 7)
+            ,(open_color.gray_3, 6)
+            ,(open_color.gray_4, 5)
+            ,(open_color.gray_5, 4)
         ]
         (self.color, self.lifetime) = self.particle_colors[self.color_pos]
         self.alive = True
@@ -110,7 +110,7 @@ class Window(arcade.Window):
             decay = random.uniform(PARTICLE_MIN_DECAY,PARTICLE_MAX_DECAY)
             scale = random.uniform(PARTICLE_MIN_SCALE,PARTICLE_MAX_SCALE)
             #Particle(asset, sprite scale, initial position [x], initial position [y], velocity [x], velocity [y], acceleration [x], acceleration [y], scale decay)
-            particle = Particle('flame_02',scale,x,y,dx,dy,ax,ay,decay)
+            particle = Particle('trace_02',scale,x,y,dx,dy,ax,ay,decay)
 
             self.particle_list.append(particle)
 
